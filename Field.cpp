@@ -89,8 +89,7 @@ FieldType Field::get(int col, int row)
 **/
 void Field::revealAdjacent(int col, int row)
 {
-	bool inside;
-	if( !inside 
+	if( inBounds(col,row) 
 		|| _map[col][row] == MINE_HIDDEN || _map[col][row] == MINE_SHOWN )
 	{
 		return;
