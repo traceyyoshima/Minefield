@@ -1,6 +1,6 @@
 # Minefield
 
-This project can be used to keep track of a simplistic [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_%28video_game%29)-like game that has a 10x10 field where mines can be placed. Initially, the mines are hidden and the user makes guesses to try to find all the empty spaces *without* choosing any of the hidden mines.
+This project can be used to keep track of a simplistic [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_%28video_game%29)-like game that has a square field where mines can be placed. Initially, the mines are hidden and the user makes guesses to try to find all the empty spaces *without* choosing any of the hidden mines.
 
 ## FieldType
 
@@ -18,13 +18,15 @@ FieldType is an enumerated type to represent the four possible states of the min
 
 `Field()` Constructor creates a 10x10 grid with no mines
 
-`void placeMine(int x, int y)` Places a mine at the x,y coordinate in the field
+`Field(int dim)` Constructor creates a dimXdim grid with no mines or an invalid parameter defaults to 10x10
 
-`FieldType get(int x, int y)` Retrieves the state of the field at location (x,y)
+`void placeMine(int col, int row)` Places a mine at the (col,row) coordinate in the field
 
-`bool isSafe(int x, int y)` **NOT YET IMPLEMENTED** Returns whether or not _map at (x,y) has a mine and throws an exception if the location is illegal
+`FieldType get(int col, int row)` Retrieves the state of the field at location (col,row)
 
-`void revealAdjacent(int x, int y)` **NOT YET IMPLEMENTED** Changes the location from EMPTY_HIDDEN to EMPTY_SHOWN for the location and any valid locations adjacent (immediately above, below, left, or right as printed) to the provided (x,y) location
+`bool isSafe(int col, int row)` Returns whether or not _map at (col,row) has a mine and throws an exception if the location is illegal
+
+`void revealAdjacent(int col, int row)` Changes the location from EMPTY_HIDDEN to EMPTY_SHOWN for the location and any valid locations adjacent (immediately above, below, left, or right as printed) to the provided (col,row) location
 
 # Quick Guide
 

@@ -19,6 +19,7 @@ class Field
 {
 	public:
 		Field();
+		Field(int);
 		bool isSafe(int, int);
 		FieldType get(int,int);
 		void revealAdjacent(int, int);
